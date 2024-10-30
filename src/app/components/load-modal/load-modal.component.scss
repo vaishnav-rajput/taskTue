@@ -1,0 +1,139 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.modal-parent{
+    padding: 25px; 
+}
+
+.heading-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .heading{
+        font-size: 20px;
+        font-weight: 700;
+        line-height: 27.24px;
+        font-family:'Open Sans';
+        color: #101A72;
+    }
+
+    .material-symbols-outlined{
+        font-size: 36px;
+        font-weight: 300;
+        cursor: pointer;
+    }
+}
+
+.num-drop{
+    display: grid;
+    grid-template-columns: 40% 60%;
+    gap: 0 10px;
+    margin-top: 20px;
+    font-family:'Open Sans';
+    
+    .num{
+        display: flex;
+        flex-direction: column;
+        gap: 10px 0;
+
+    }
+
+    .counter-cont{
+        display: flex;
+        position: relative;
+        border: 1px solid #C4C4C4;
+        border-radius: 3px;
+        padding: 5px;
+        width: 100px;
+        height: 40px;
+        align-items: center;
+
+        .decrement{
+            width: 20px;
+            height: 20px;
+            position: absolute;
+            left: 5px;
+            background-color: #101A72;
+            color: white;
+            text-align: center;
+            border-radius: 2px;
+        }
+
+        .input{
+         width: 88px; 
+         text-align: center;
+         border: none;
+         outline: none;
+         font-weight: 600;
+        }
+
+        .increment{
+            position: absolute;
+            right: 5px;
+            width: 20px;
+            height: 20px;
+            position: absolute;
+            background-color: #101A72;
+            color: white;
+            text-align: center;
+            border-radius: 3px;
+        }
+    }
+}
+
+.pattern-drop{
+    display: flex;
+    flex-direction: column;
+    gap: 10px 0;
+    font-family: 'Open Sans';
+
+    .pattern-dropdown{
+        flex-grow: 1;
+        height: 40px;
+        appearance: none;
+        border: 1px solid #C4C4C4;
+        border-radius: 4px;
+        padding: 10px ;
+        background-image: url("../../../assets/downSvg.svg");
+        background-repeat: no-repeat;
+        background-position: right 10px center; 
+        background-size: 15px;
+    }
+}
+
+.road-container{
+   margin-top: 25px;
+}
+
+.action-container{
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-between;
+
+    .clear{
+        display: flex;
+        gap: 0 5px;
+        color: #C4C4C4;
+        align-items: center;
+        cursor: pointer;
+
+        .replay-icon{
+            color: #C4C4C4 !important;
+            transform: rotate(-90deg) !important;
+        }
+    }
+
+    .save-btn{
+        padding: 8px 50px;
+        border: 2px solid #101A72;
+        background-color: white;
+        font-weight: 700;
+        color: #101A72;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+}

@@ -1,0 +1,57 @@
+<div class="modal-parent">
+    <!-- heading -->
+     <div class="heading-container">
+        <p class="heading">Add Info</p>
+        <span class="material-symbols-outlined large-icon" (click)="closeDialog()">close</span>
+    </div>
+    <form [formGroup]="loadForm" (ngSubmit)="onSubmit()">
+    <!-- number and dropdown -->
+     <div class="num-drop">
+        <div class="num" >
+            <p>Average Load(in Tonnes)</p>
+            <div class="counter-cont">
+               <button type="button" class="decrement" (click)="decrement()">-</button>
+                  <input type="text" class="input" formControlName="loadNo" 
+                     [value]="formatLoad()"
+                     (input)="onLoadInput($event)"
+                  >
+               <button type="button" class="increment" (click)="increment()">+</button>
+            </div>
+         </div>
+        <div class="pattern-drop">
+         <p>Loading Pattern</p>
+         <select formControlName="pattern" class="pattern-dropdown">
+            <option value="" disabled selected>Select from dropdown</option>
+            <option value="{{pattern}}" *ngFor="let pattern of labels.patterns">{{pattern}}</option>
+         </select>
+        </div>
+     </div>
+
+    <!-- road condition -->
+     <div class="pattern-drop road-container">
+      <p>Road Condition</p>
+      <select formControlName="road" class="pattern-dropdown">
+         <option value="" disabled selected>Select from dropdown</option>
+         <option *ngFor="let road of labels.roads" value="{{road}}">{{road}}</option>
+      </select>
+     </div>
+    <!-- route -->
+
+    <div class="pattern-drop road-container">
+      <p>Route</p>
+      <select formControlName="routeTake" class="pattern-dropdown">
+         <option value="" disabled selected>Select from dropdown</option>
+         <option *ngFor="let route of labels.routes" value="{{route}}">{{route}}</option>
+      </select>
+     </div>
+     <!-- actions -->
+     <div class="action-container">
+      <div class="clear" (click)="onReset()">
+         <mat-icon class="replay-icon">replay</mat-icon>
+         <p>Clear</p>
+      </div>
+
+      <button type="submit" [disabled]="!loadForm.valid" class="save-btn">SAVE</button>
+   </div>
+   </form>
+</div>
